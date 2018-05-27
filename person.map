@@ -1,0 +1,9 @@
+
+ Start         Length     Name                   Class
+ 0002:00000000 00000044H  _TEXT                  CODE 32-bit
+ 0002:00000044 0000000CH  ICODE                  ICODE 32-bit
+ 0003:00000000 00000008H  _DATA                  DATA 32-bit
+ 0003:00000008 00000000H  CONST                  CONST 32-bit
+ 0003:00000008 00000000H  _BSS                   BSS 32-bit
+ 0003:00000008 00000000H  IMP__DATA              IMP__DATA 32-bit
+OPTLINK : Warning 134: No Start Address 
