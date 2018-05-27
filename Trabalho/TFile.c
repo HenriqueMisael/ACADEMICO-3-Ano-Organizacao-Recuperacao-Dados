@@ -3,10 +3,10 @@
 #define NOME_ARQUIVO "registros.dat"
 
 FILE* file;
+long offsetLedAnterior;
 char* delecao = "*|";
 
 void escreveNoLed(long cabecaLed) {
-    printf("Vai escrever LED %ld em %ld\n", cabecaLed, ftell(file));
     fwrite(&cabecaLed, sizeof(cabecaLed), 1, file);
 }
 
@@ -41,95 +41,121 @@ void TFile_verify() {
     }
 }
 
+void escrevePosicao() {
+    printf("%ld\n", ftell(file));
+}
 void TFile_append(TCandidato* c){
     int tamanho;
     int offSetGravacao;
     char* buffer = TCandidato_toString(c);
+    long proximoOffsetLed;
+    int consumiuLed;
     
     tamanho = strlen(buffer);
     file = openFileToUse();
     
-    achaEspacoDisponivel(tamanho);
+    consumiuLed = achaEspacoDisponivel(tamanho, &proximoOffsetLed);
     gravaNovoRegistro(buffer, tamanho);
+    
+    if(consumiuLed) {
+        fseek(file, offsetLedAnterior, SEEK_SET);
+        escreveNoLed(proximoOffsetLed);
+    }
     
     fclose(file);
 }
 
 int posiciona(char* inscricao) {
-    fseek(file, sizeof(long), SEEK_SET);
-    char* buffer = (char*)malloc(256);
-    
-    do {
+    TFile_avancaNoLed();
+    while(!feof(file)) {
         short tamanho;
-        fread(&tamanho, sizeof(tamanho), 1, file);
+        if(fread(&tamanho, sizeof(tamanho), 1, file) == 0) {
+            break;
+        }
+        
+        char* buffer = (char*)malloc(tamanho);
         tamanho = fread(buffer, 1, tamanho, file);
         buffer[tamanho] = '\0';
-        printf("%s\n", buffer);
-        char* current = strtok(buffer, "|");
-        if(!strcmp(current, inscricao)){
+        short resultado = strcmp(strtok(buffer, "|"), inscricao);
+        
+        free(buffer);
+        
+        if(!resultado) {
+            fseek(file, -(sizeof(tamanho) + tamanho), SEEK_CUR);
             return tamanho;
         }
-    } while(!feof(file));
+    }
     
     return 0;
 }
 
-void posicionaInicioRegistro(short tamanho) {
-    fseek(file, - (tamanho), SEEK_CUR);
-}
-
 void posicionaFimLed() {
-    fseek(file, 0, SEEK_SET);
+    TFile_posicionaInicio();
     
-    do {
+    while(1) {
         long novoOffset;
         fread(&novoOffset, sizeof(novoOffset), 1, file);
         if(novoOffset == -1){
-            fseek(file, -sizeof(novoOffset), SEEK_CUR);
+            TFile_retornaNoLed();
             break;
         }
         fseek(file, novoOffset, SEEK_SET);
-    } while(!feof(file));
+        TFile_avancaTamanho();
+        TFile_avancaMarcadorDelecao();
+    }
 }
 
-void achaEspacoDisponivel(short tamanho) {
-    fseek(file, 0, SEEK_SET);
+int achaEspacoDisponivel(short tamanho, long* proximoOffsetLed) {
+    long novoOffset;
+    short espacoLivre;
     
-    do {
-        long novoOffset;
-        short espacoLivre;
-        
-        fread(&novoOffset, sizeof(novoOffset), 1, file);
-        fseek(file, -(sizeof(delecao) + sizeof(novoOffset)), SEEK_CUR);
-        fread(&espacoLivre, sizeof(espacoLivre), 1, file);
+    TFile_posicionaInicio();
+    fread(&novoOffset, sizeof(novoOffset), 1, file);
+    
+    while(!feof(file)) {
         if(novoOffset == -1) {
-            fseek(file, 0, SEEK_END);
-            break;
-        } else if(espacoLivre >= tamanho){
-            fseek(file, -sizeof(espacoLivre), SEEK_CUR);
-            break;
+            TFile_posicionaFim();
+            return 0;
         }
         
         fseek(file, novoOffset, SEEK_SET);
-    } while(!feof(file));
+        fread(&espacoLivre, sizeof(espacoLivre), 1, file);
+        
+        if(espacoLivre >= tamanho) {
+            TFile_avancaMarcadorDelecao();
+            fread(proximoOffsetLed, sizeof(*proximoOffsetLed), 1, file);
+            TFile_retornaMarcadorDelecao();
+            TFile_retornaNoLed();
+            TFile_retornaTamanho();
+            break;
+        }
+        TFile_avancaMarcadorDelecao();
+        offsetLedAnterior = novoOffset;
+        fread(&novoOffset, sizeof(novoOffset), 1, file);
+    }
+    
+    return 1;
 }
 
-void gravaDelecao(tamanho) {
+void gravaDelecao() {
+    TFile_avancaTamanho();
     fprintf(file, "%s", delecao);
-    long novoFimLed = ftell(file);
     escreveNoLed(-1L);
+    
+    TFile_retornaNoLed();
+    TFile_retornaTamanho();
+    TFile_retornaMarcadorDelecao();
+    
+    long novoNoLed = ftell(file);
     posicionaFimLed();
-    escreveNoLed(novoFimLed);
+    escreveNoLed(novoNoLed);
 }
 
 void TFile_remove(char* inscricao){
-    short tamanho;
     file = openFileToUse();
     
-    tamanho = posiciona(inscricao);
-    if(tamanho) {
-        posicionaInicioRegistro(tamanho);
-        gravaDelecao(tamanho);
+    if(posiciona(inscricao)) {
+        gravaDelecao();
     } else {
         printf("Nao encontrou inscricao %s para exclusao.\n", inscricao);
     }
@@ -144,4 +170,57 @@ void gravaNovoRegistro(char* buffer, short tamanho) {
 
 FILE* openFileToUse(){
     return fopen(NOME_ARQUIVO, "r+");
+}
+void TFile_showContent() {
+    file = openFileToUse();
+    
+    TFile_avancaNoLed();
+    while(!feof(file)) {
+        short tamanho;
+        if(fread(&tamanho, sizeof(tamanho), 1, file) == 0) {
+            break;
+        }
+        
+        char* buffer = (char*)malloc(tamanho);
+        tamanho = fread(buffer, 1, tamanho, file);
+        buffer[tamanho] = '\0';
+        
+        printf(" %ld: %s\n", ftell(file), buffer);
+        
+        free(buffer);
+    }
+    
+    fclose(file);
+}
+
+void TFile_avancaNoLed() {
+    fseek(file, sizeof(long), SEEK_CUR);   
+}
+
+void TFile_retornaNoLed() {
+    fseek(file, -sizeof(long), SEEK_CUR);   
+}
+
+void TFile_posicionaInicio() {
+    fseek(file, 0, SEEK_SET);
+}
+
+void TFile_posicionaFim() {
+    fseek(file, 0, SEEK_END);
+}
+
+void TFile_avancaTamanho() {
+    fseek(file, sizeof(short), SEEK_CUR);
+}
+
+void TFile_retornaTamanho() {
+    fseek(file, -sizeof(short), SEEK_CUR);
+}
+
+void TFile_retornaMarcadorDelecao() {
+    fseek(file, -2, SEEK_CUR);
+}
+
+void TFile_avancaMarcadorDelecao() {
+    fseek(file, 2, SEEK_CUR);
 }

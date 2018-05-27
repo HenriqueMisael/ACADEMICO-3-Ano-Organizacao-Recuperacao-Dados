@@ -22,7 +22,16 @@ void TCandidato_setScore(TCandidato* self, char* score){
 char* TCandidato_toString(TCandidato* self) {
     char* string = malloc(sizeof(char)*256);
     
-    sprintf(string, "%s|%s|%s|%s|\0", self->inscricao, self->nome, self->curso, self->score);
+    string[0] = '\0';
+    
+    strcat(string, self->inscricao);
+    strcat(string, "|");
+    strcat(string, self->nome);
+    strcat(string, "|");
+    strcat(string, self->curso);
+    strcat(string, "|");
+    strcat(string, self->score);
+    strcat(string, "|");
     
     return string;
 }

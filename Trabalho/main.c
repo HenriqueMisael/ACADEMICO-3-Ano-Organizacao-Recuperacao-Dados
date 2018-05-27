@@ -28,6 +28,7 @@ void readField(char* field, int fieldSize, FILE *input){
 }
 
 void importacao() {
+    TFile_createNewFile();
     FILE* file = fopen("dados-inline.txt", "r");
     TCandidato* c = TCandidato_novo();
     
@@ -49,8 +50,7 @@ void insercao() {
     TCandidato* c = TCandidato_novo();
     
     leCandidato(c);
-    printf("Inserir candidato: \n");
-    escreveCandidato(c);
+    printf("Inserir candidato: %s? ", TCandidato_toString(c));
     
     if(strcmp(TScan_get("[ /N]", 2), "N")) {
         TFile_append(c);
@@ -61,7 +61,7 @@ int menu() {
     printf(" 1 - Importar dados\n");
     printf(" 2 - Inserir candidato\n");
     printf(" 3 - Remover candidato\n");
-    printf(" 4 - Renovar arquivo\n");
+    printf(" 4 - Listar candidatos\n");
     
     return TScan_getLong("> ");
 }
@@ -78,7 +78,7 @@ int main(int argc, char *argv[]) {
     	    case 1: importacao(); break;
     	    case 2: insercao(); break;
     	    case 3: TFile_remove(TScan_get("Inscricao a remover: ", TAMANHO_CAMPO_INSCRICAO)); break;
-    	    case 4: TFile_createNewFile(); break;
+    	    case 4: TFile_showContent(); break;
     	    default: if(opcao) printf("\n Opcao nao prevista.");
         }
     } while(opcao);
