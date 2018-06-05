@@ -17,7 +17,7 @@ void readField(char* field, int fieldSize, FILE *input){
     char c;
     int i;
 
-    for(i = 0; i < fieldSize; i++){
+    for(i = 0; i < fieldSize; i++) {
         c = fgetc(input);
         if(c == '|'){
             field[i] = '\0';

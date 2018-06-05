@@ -67,8 +67,10 @@ void TFile_append(TCandidato* c){
 
 int posiciona(char* inscricao) {
     TFile_avancaNoLed();
+    
     while(!feof(file)) {
         short tamanho;
+    
         if(fread(&tamanho, sizeof(tamanho), 1, file) == 0) {
             break;
         }
