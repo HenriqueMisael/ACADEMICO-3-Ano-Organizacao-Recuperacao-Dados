@@ -43,6 +43,7 @@ void importacao() {
         TFile_append(c);
     }
     
+    free(c);
     fclose(file);
 }
 

@@ -6,8 +6,8 @@ FILE* file;
 long offsetLedAnterior;
 char* delecao = "*|";
 
-void escreveNoLed(long cabecaLed) {
-    fwrite(&cabecaLed, sizeof(cabecaLed), 1, file);
+void escreveNoLed(long noLed) {
+    fwrite(&noLed, sizeof(noLed), 1, file);
 }
 
 void TFile_createNewFile() {
@@ -111,6 +111,7 @@ int achaEspacoDisponivel(short tamanho, long* proximoOffsetLed) {
     long novoOffset;
     short espacoLivre;
     
+    offsetLedAnterior = 0;
     TFile_posicionaInicio();
     fread(&novoOffset, sizeof(novoOffset), 1, file);
     
