@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/Trabalho_2_Bimestre_Insercao_Busca_Arvore_B.dir/main.c.o CMakeFiles/Trabalho_2_Bimestre_Insercao_Busca_Arvore_B.dir/menu.c.o CMakeFiles/Trabalho_2_Bimestre_Insercao_Busca_Arvore_B.dir/util.c.o  -o Trabalho_2_Bimestre_Insercao_Busca_Arvore_B 

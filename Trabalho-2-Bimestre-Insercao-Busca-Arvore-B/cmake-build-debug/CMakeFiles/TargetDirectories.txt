@@ -1,0 +1,3 @@
+/home/henrique/Desenvolvimento/uem/ACADEMICO-3-Ano-Organizacao-Recuperacao-Dados/Trabalho-2-Bimestre-Insercao-Busca-Arvore-B/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/henrique/Desenvolvimento/uem/ACADEMICO-3-Ano-Organizacao-Recuperacao-Dados/Trabalho-2-Bimestre-Insercao-Busca-Arvore-B/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/henrique/Desenvolvimento/uem/ACADEMICO-3-Ano-Organizacao-Recuperacao-Dados/Trabalho-2-Bimestre-Insercao-Busca-Arvore-B/cmake-build-debug/CMakeFiles/Trabalho_2_Bimestre_Insercao_Busca_Arvore_B.dir
