@@ -19,9 +19,11 @@ void verifica_cria_arquivo() {
 
 void le_raiz_arquivo(RRN *raiz) {
     abre_arquivo();
-    fread(raiz, sizeof(RRN), 1, file);
+    le_raiz(raiz);
     fecha_arquivo();
 }
+
+void le_raiz(RRN *raiz) { fread(raiz, sizeof(RRN), 1, file); }
 
 int abre_arquivo() {
 
@@ -43,10 +45,14 @@ PAGINA lerPagina_arquivo(RRN rrn) {
 
     abre_arquivo();
     posiciona_arquivo(rrn);
-    fread(&result, sizeof(PAGINA), 1, file);
+    le_pagina(&result);
     fecha_arquivo();
 
     return result;
+}
+
+void le_pagina(PAGINA *result) {
+    fread(result, sizeof(PAGINA), 1, file);
 }
 
 PAGINA *criaNovaPagina() {
@@ -133,8 +139,8 @@ int insere_arvore(RRN rrnAtual, CHAVE chaveInserir, RRN *rrnPromocao, CHAVE *cha
     int i;
 
     if (rrnAtual == EMPTY_RRN) {
-        strcpy(*chavePromocaoAtual, chaveInserir);
-        *rrnPromocaoAtual = EMPTY_RRN;
+        strcpy(chavePromocao, chaveInserir);
+        *rrnPromocao = EMPTY_RRN;
         return INSERCAO_PROMOCAO;
     }
 
@@ -143,7 +149,7 @@ int insere_arvore(RRN rrnAtual, CHAVE chaveInserir, RRN *rrnPromocao, CHAVE *cha
         int comparacao = comparaChaves(paginaAtual->chaves[i], chaveInserir);
         if (comparacao == 0) {
             return INSERCAO_ERRO;
-        } else if (comparacao > 1) {
+        } else if (comparacao > 0) {
             break;
         }
     }
@@ -255,4 +261,28 @@ RRN geraNovaRaiz(CHAVE chave, RRN esquerda, RRN direita) {
     cabecalho_arquivo(rrn);
     escreve_arquivo(pagina, rrn);
     return rrn;
+}
+
+void listar_arvore() {
+
+    RRN raiz;
+
+    abre_arquivo();
+    le_raiz_arquivo(&raiz);
+    for (int i = 1; !feof(file); i++) {
+        PAGINA pagina;
+        le_pagina(&pagina);
+        printf("RRN: %d\n", i);
+        printf("Chaves:");
+        for(int j = 0; j < pagina.lotacao; j++) {
+            printf(" %s |", pagina.chaves[j]);
+        }
+        printf("Filhos:");
+        for(int j = 0; j < pagina.lotacao+1; j++) {
+            printf(" %ld |", pagina.filhos[j]);
+        }
+        getchar();
+    }
+
+    fecha_arquivo();
 }

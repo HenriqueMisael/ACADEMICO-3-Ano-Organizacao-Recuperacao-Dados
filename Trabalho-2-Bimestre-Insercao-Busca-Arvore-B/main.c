@@ -34,7 +34,7 @@ void fechar() {
 }
 
 void listagem() {
-    printf("listagem\n");
+    listar_arvore();
 }
 
 void busca() {

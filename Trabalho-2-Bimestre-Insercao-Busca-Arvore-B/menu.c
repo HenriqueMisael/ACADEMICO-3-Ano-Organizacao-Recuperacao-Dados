@@ -39,7 +39,7 @@ void executaMenu(Menu *menu) {
     }
 
     do {
-        println("> ");
+        printf("> ");
 
         int option = readInt();
         if (option < 0 || option >= menu->quantidade) {

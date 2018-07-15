@@ -62,4 +62,7 @@ int insere_pagina_auxiliar(PAGINA_AUXILIAR *pagina, RRN rrn, CHAVE chave);
 
 RRN geraNovaRaiz(CHAVE chave, RRN esquerda, RRN direita);
 
+void listar_arvore();
+void le_raiz(RRN *raiz);
+void le_pagina(PAGINA *result);
 #endif //TRABALHO_2_BIMESTRE_INSERCAO_BUSCA_ARVORE_B_BUSCA_H
