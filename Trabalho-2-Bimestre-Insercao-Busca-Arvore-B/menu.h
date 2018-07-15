@@ -2,7 +2,6 @@
 #define TRABALHO_2_BIMESTRE_INSERCAO_BUSCA_ARVORE_B_MENU_H
 typedef struct {
     char *descricao;
-
     void (*executa)();
 } ItemMenu;
 
@@ -11,7 +10,7 @@ typedef struct {
     int quantidade;
 } Menu;
 
-ItemMenu newItemMenu(const char *descricao, void (*executa)());
+ItemMenu newItemMenu(char *descricao, void (*executa)());
 
 Menu *newMenu(int quantidade, ...);
 

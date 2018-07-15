@@ -1,9 +1,9 @@
 #include <malloc.h>
-#include <zconf.h>
+#include <stdarg.h>
 #include "menu.h"
 #include "util.h"
 
-ItemMenu newItemMenu(const char *descricao, void (*executa)()) {
+ItemMenu newItemMenu(char *descricao, void (*executa)()) {
     ItemMenu *item = (ItemMenu *) malloc(sizeof(ItemMenu));
 
     item->descricao = descricao;
