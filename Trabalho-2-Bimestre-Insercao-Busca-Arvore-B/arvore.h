@@ -10,19 +10,19 @@
 
 #define EMPTY_RRN 0
 
-typedef char CHAVE[6];
+typedef int CHAVE;
 typedef long RRN;
 
 typedef struct {
+    int lotacao;
     CHAVE chaves[LOTACAO_MAX];
     RRN filhos[ORDEM];
-    int lotacao;
 } PAGINA;
 
 typedef struct {
+    int lotacao;
     CHAVE chaves[LOTACAO_MAX + 1];
     RRN filhos[ORDEM + 1];
-    int lotacao;
 } PAGINA_AUXILIAR;
 
 static char *const NOME_ARQUIVO = "indice";
@@ -35,13 +35,13 @@ PAGINA lerPagina_arquivo(RRN rrn);
 
 void posiciona_arquivo(RRN rrn);
 
-void escreve_arquivo(PAGINA *atual, RRN rrnAtual);
+void escreve_arquivo(PAGINA pagina, RRN rrn);
 
 int abre_arquivo();
 
 void fecha_arquivo();
 
-CHAVE *mediana_pagina(PAGINA_AUXILIAR *auxiliar);
+CHAVE mediana_pagina(PAGINA_AUXILIAR auxiliar);
 
 int comparaChaves(CHAVE i, CHAVE chave);
 

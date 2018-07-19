@@ -3,13 +3,8 @@
 #include <stdbool.h>
 
 #include "main.h"
-#include "menu.h"
-#include "util.h"
-#include "arvore.h"
 
 RRN paginaRaiz;
-
-void insere(char string[4]);
 
 int main() {
 
@@ -42,17 +37,10 @@ void busca() {
 }
 
 void insercao() {
-    insere("100");
-    insere("50");
-    insere("150");
-    insere("40");
-    insere("30");
-    insere("70");
-    insere("60");
-    insere("55");
-    insere("90");
-    insere("91");
-    insere("89");
+    insere(100);
+    insere(50);
+    insere(150);
+    insere(40);
 }
 
 void insere(CHAVE chave) {
