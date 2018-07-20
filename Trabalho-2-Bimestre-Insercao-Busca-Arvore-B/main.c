@@ -29,7 +29,11 @@ void fechar() {
 }
 
 void listagem() {
-    listar_arvore();
+    if(paginaRaiz== 0) {
+        println("Nao existe raiz. Insira pelo menos uma chave para listar a arvore.");
+    } else {
+        listar_arvore();
+    }
 }
 
 void busca() {
@@ -37,10 +41,8 @@ void busca() {
 }
 
 void insercao() {
-    insere(100);
-    insere(50);
-    insere(150);
-    insere(40);
+    println("Digite a chave para inserir:");
+    insere(readInt());
 }
 
 void insere(CHAVE chave) {
@@ -48,5 +50,8 @@ void insere(CHAVE chave) {
 }
 
 void importacao() {
-    printf("importacao\n");
+    novo_arquivo();
+    fecha_arquivo();
+    le_raiz_arquivo(&paginaRaiz);
+    println("Novo arquivo gerado.");
 }

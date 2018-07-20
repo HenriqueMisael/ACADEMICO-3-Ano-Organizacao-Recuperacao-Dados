@@ -27,6 +27,12 @@ typedef struct {
 
 static char *const NOME_ARQUIVO = "indice";
 
+void novo_arquivo();
+
+void imprimePagina(RRN i, PAGINA pagina);
+
+void escreve_cabecalho_arquivo(RRN rrn);
+
 void verifica_cria_arquivo();
 
 void le_raiz_arquivo(RRN *raiz);
@@ -63,6 +69,9 @@ int insere_pagina_auxiliar(PAGINA_AUXILIAR *pagina, RRN rrn, CHAVE chave);
 RRN geraNovaRaiz(CHAVE chave, RRN esquerda, RRN direita);
 
 void listar_arvore();
+
 void le_raiz(RRN *raiz);
+
 void le_pagina(PAGINA *result);
+
 #endif //TRABALHO_2_BIMESTRE_INSERCAO_BUSCA_ARVORE_B_BUSCA_H

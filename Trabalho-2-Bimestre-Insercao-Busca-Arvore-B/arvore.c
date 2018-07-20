@@ -5,18 +5,26 @@
 
 FILE *file;
 
-void imprimePagina(RRN i, PAGINA pagina);
-
 void cabecalho_arquivo(RRN raiz) {
     fwrite(&raiz, sizeof(RRN), 1, file);
 }
 
-void verifica_cria_arquivo() {
-//    if (!abre_arquivo()) {
-        file = fopen(NOME_ARQUIVO, "wb+");
-        cabecalho_arquivo(0);
-//    }
+void escreve_cabecalho_arquivo(RRN rrn) {
+    abre_arquivo();
+    cabecalho_arquivo(rrn);
     fecha_arquivo();
+}
+
+void verifica_cria_arquivo() {
+    if (!abre_arquivo()) {
+        novo_arquivo();
+    }
+    fecha_arquivo();
+}
+
+void novo_arquivo() {
+    file = fopen(NOME_ARQUIVO, "wb+");
+    cabecalho_arquivo(0);
 }
 
 void le_raiz_arquivo(RRN *raiz) {
@@ -182,14 +190,17 @@ void divide_pagina(CHAVE chavePromocaoAtual, RRN rrnPromocaoAtual, PAGINA *pagin
     *chavePromocao = mediana_pagina(pagina_auxiliar);
     *rrnPromocao = novo_rrn();
 
-    int i;
+    int i, j;
 
     for (i = 0; comparaChaves(pagina_auxiliar.chaves[i], *chavePromocao) < 0; i++) {
         paginaAtual->chaves[i] = pagina_auxiliar.chaves[i];
     }
-    for (; i < pagina_auxiliar.lotacao; i++) {
-        novaPagina->chaves[i] = pagina_auxiliar.chaves[i];
+    paginaAtual->lotacao = i++;
+
+    for (j = 0; i < pagina_auxiliar.lotacao; j++, i++) {
+        novaPagina->chaves[j] = pagina_auxiliar.chaves[i];
     }
+    novaPagina->lotacao = j;
 }
 
 RRN novo_rrn() {
@@ -249,7 +260,7 @@ RRN geraNovaRaiz(CHAVE chave, RRN esquerda, RRN direita) {
     pagina.filhos[1] = direita;
     pagina.lotacao = 1;
 
-    cabecalho_arquivo(rrn);
+    escreve_cabecalho_arquivo(rrn);
     escreve_arquivo(pagina, rrn);
     return rrn;
 }
@@ -257,12 +268,17 @@ RRN geraNovaRaiz(CHAVE chave, RRN esquerda, RRN direita) {
 void listar_arvore() {
 
     RRN raiz;
+    RRN i = 1;
 
     abre_arquivo();
     le_raiz(&raiz);
-    for (RRN i = 1; !feof(file); i++) {
+    do {
         PAGINA pagina;
         le_pagina(&pagina);
+
+        if (feof(file)) {
+            break;
+        }
 
         if (i == raiz) {
             println("=======PAGINA RAIZ=======");
@@ -270,9 +286,8 @@ void listar_arvore() {
             println("=======PAGINA NO=======");
         }
 
-        imprimePagina(i, pagina);
-        getchar();
-    }
+        imprimePagina(i++, pagina);
+    } while (TRUE);
 
     fecha_arquivo();
 }
