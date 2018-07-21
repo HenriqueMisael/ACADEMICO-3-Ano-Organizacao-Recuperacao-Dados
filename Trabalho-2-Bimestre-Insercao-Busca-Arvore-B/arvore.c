@@ -155,7 +155,7 @@ int insere_arvore(RRN rrnAtual, CHAVE chaveInserir, RRN *rrnPromocao, CHAVE *cha
     }
 
     paginaAtual = lerPagina_arquivo(rrnAtual);
-    for (i = 0; i < LOTACAO_MAX; i++) {
+    for (i = 0; i < paginaAtual.lotacao; i++) {
         int comparacao = comparaChaves(paginaAtual.chaves[i], chaveInserir);
         if (comparacao == 0) {
             return INSERCAO_ERRO;
