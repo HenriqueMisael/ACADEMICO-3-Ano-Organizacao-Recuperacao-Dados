@@ -12,13 +12,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eb248188-3bd0-48bc-9310-de8c7e68264e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/arvore.c" beforeDir="false" afterPath="$PROJECT_DIR$/arvore.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/arvore.h" beforeDir="false" afterPath="$PROJECT_DIR$/arvore.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.10.3/CMakeCCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.10.3/CMakeCCompiler.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.10.3/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.10.3/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.10.3/CMakeSystem.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.10.3/CMakeSystem.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.10.3/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.10.3/CompilerIdC/CMakeCCompilerId.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.10.3/CompilerIdC/a.out" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
@@ -41,13 +40,11 @@
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cmake.check_cache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cmake.check_cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.c" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Trabalho_2_Bimestre_Insercao_Busca_Arvore_B.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Trabalho_2_Bimestre_Insercao_Busca_Arvore_B.cbp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/menu.c" beforeDir="false" afterPath="$PROJECT_DIR$/menu.c" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -63,8 +60,13 @@
       <file leaf-file-name="main.c" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.c">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
             <state relative-caret-position="649">
               <caret line="48" column="44" lean-forward="true" selection-start-line="48" selection-start-column="44" selection-end-line="48" selection-end-column="44" />
+=======
+            <state relative-caret-position="485">
+              <caret line="62" column="32" selection-start-line="62" selection-start-column="32" selection-end-line="62" selection-end-column="32" />
+>>>>>>> Stashed changes
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -72,14 +74,18 @@
           </provider>
         </entry>
       </file>
+<<<<<<< Updated upstream
       <file leaf-file-name="main.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.h">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="45">
               <caret line="3" selection-start-line="3" selection-end-line="3" />
-              <folding>
-                <element signature="e#119#136#0" expanded="true" />
-              </folding>
+=======
+      <file leaf-file-name="util.c" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/util.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -87,8 +93,38 @@
       <file leaf-file-name="arvore.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/arvore.c">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="203">
+              <caret line="141" selection-start-line="141" selection-end-line="141" />
+>>>>>>> Stashed changes
+              <folding>
+                <element signature="e#119#136#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+<<<<<<< Updated upstream
+      <file leaf-file-name="arvore.c" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/arvore.c">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
               <caret line="7" selection-start-line="7" selection-end-line="7" />
+=======
+      <file leaf-file-name="arvore.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/arvore.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="833">
+              <caret line="49" column="77" selection-start-line="49" selection-start-column="76" selection-end-line="49" selection-end-column="77" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="menu.c" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/menu.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="697">
+              <caret line="41" column="14" selection-start-line="41" selection-start-column="14" selection-end-line="41" selection-end-column="14" />
+>>>>>>> Stashed changes
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -129,7 +165,10 @@
         <option value="$PROJECT_DIR$/main.h" />
         <option value="$PROJECT_DIR$/cmake-build-debug/indice" />
         <option value="$PROJECT_DIR$/arvore.c" />
+<<<<<<< Updated upstream
         <option value="$PROJECT_DIR$/arvore.h" />
+=======
+>>>>>>> Stashed changes
         <option value="$PROJECT_DIR$/main.c" />
       </list>
     </option>
@@ -218,6 +257,7 @@
       <workItem from="1531575942541" duration="913000" />
       <workItem from="1531577452364" duration="142000" />
       <workItem from="1531577692800" duration="28877000" />
+<<<<<<< Updated upstream
       <workItem from="1531617121096" duration="21211000" />
       <workItem from="1532022049347" duration="33000" />
       <workItem from="1532022678172" duration="63000" />
@@ -225,11 +265,20 @@
       <workItem from="1532026012584" duration="482000" />
       <workItem from="1532027219186" duration="3488000" />
       <workItem from="1532100059326" duration="2081000" />
+=======
+      <workItem from="1531617121096" duration="21819000" />
+      <workItem from="1531868316442" duration="25000" />
+      <workItem from="1532175588313" duration="371000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< Updated upstream
     <option name="totallyTimeSpent" value="69798000" />
+=======
+    <option name="totallyTimeSpent" value="63319000" />
+>>>>>>> Stashed changes
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="24" width="1922" height="1033" extended-state="6" />
@@ -237,7 +286,10 @@
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1296875" />
       <window_info anchor="bottom" id="TODO" order="6" />
+<<<<<<< Updated upstream
       <window_info anchor="bottom" id="Messages" order="7" weight="0.325054" />
+=======
+>>>>>>> Stashed changes
       <window_info anchor="bottom" id="CMake" order="7" weight="0.32884902" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" weight="0.27503738" />
@@ -245,14 +297,19 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32884902" />
       <window_info id="Favorites" order="2" side_tool="true" />
+<<<<<<< Updated upstream
       <window_info anchor="bottom" id="Debug" order="3" weight="0.32181427" />
+=======
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.32286996" />
+>>>>>>> Stashed changes
       <window_info active="true" anchor="bottom" id="SVN Repositories" order="8" weight="0.32884902" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" x="0" y="0" width="295" height="584" id="Documentation" order="3" side_tool="true" weight="0.329429" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.3258595" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32884902" />
     </layout>
@@ -287,6 +344,7 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/main.h">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="90">
           <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
         </state>
@@ -312,6 +370,64 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="24" column="41" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
+=======
+        <state relative-caret-position="187">
+          <caret line="11" column="10" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/arvore.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2397">
+          <caret line="141" selection-start-line="141" selection-end-line="141" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/arvore.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="833">
+          <caret line="49" column="77" selection-start-line="49" selection-start-column="76" selection-end-line="49" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/menu.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="41" column="14" selection-start-line="41" selection-start-column="14" selection-end-line="41" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="10" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/arvore.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2397">
+          <caret line="141" selection-start-line="141" selection-end-line="141" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
@@ -579,6 +695,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/util.c">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="150">
           <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
         </state>
@@ -595,21 +712,48 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" selection-start-line="3" selection-end-line="3" />
+=======
+        <state relative-caret-position="697">
+          <caret line="41" column="14" selection-start-line="41" selection-start-column="14" selection-end-line="41" selection-end-column="14" />
           <folding>
-            <element signature="e#119#136#0" expanded="true" />
+            <element signature="e#0#19#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/arvore.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="31" column="41" lean-forward="true" selection-start-line="31" selection-start-column="41" selection-end-line="31" selection-end-column="41" />
+        <state relative-caret-position="833">
+          <caret line="49" column="77" selection-start-line="49" selection-start-column="76" selection-end-line="49" selection-end-column="77" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/arvore.c">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="141" selection-start-line="141" selection-end-line="141" />
+>>>>>>> Stashed changes
+          <folding>
+            <element signature="e#119#136#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/util.c">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
+        <state relative-caret-position="179">
+          <caret line="31" column="41" lean-forward="true" selection-start-line="31" selection-start-column="41" selection-end-line="31" selection-end-column="41" />
+=======
+        <state relative-caret-position="170">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+>>>>>>> Stashed changes
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.c">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="105">
           <caret line="7" selection-start-line="7" selection-end-line="7" />
           <folding>
@@ -622,6 +766,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="649">
           <caret line="48" column="44" lean-forward="true" selection-start-line="48" selection-start-column="44" selection-end-line="48" selection-end-column="44" />
+=======
+        <state relative-caret-position="485">
+          <caret line="62" column="32" selection-start-line="62" selection-start-column="32" selection-end-line="62" selection-end-column="32" />
+>>>>>>> Stashed changes
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>

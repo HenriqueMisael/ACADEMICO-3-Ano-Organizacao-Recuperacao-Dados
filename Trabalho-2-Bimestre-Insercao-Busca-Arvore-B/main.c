@@ -50,8 +50,12 @@ void insere(CHAVE chave) {
 }
 
 void importacao() {
+<<<<<<< Updated upstream
     novo_arquivo();
     fecha_arquivo();
     le_raiz_arquivo(&paginaRaiz);
     println("Novo arquivo gerado.");
+=======
+    FILE importacao = fopen(read)
+>>>>>>> Stashed changes
 }
