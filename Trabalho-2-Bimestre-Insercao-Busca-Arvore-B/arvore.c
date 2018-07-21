@@ -102,7 +102,7 @@ int busca_arvore(RRN rrn, CHAVE chave, RRN *rrn_encontrado, int *posicao_encontr
 
     PAGINA pagina = lerPagina_arquivo(rrn);
     int i;
-    for (i = 0; i < LOTACAO_MAX; i++) {
+    for (i = 0; i < pagina.lotacao; i++) {
         int comparacao = comparaChaves(pagina.chaves[i], chave);
         if (comparacao == 0) {
             *rrn_encontrado = rrn;
@@ -112,7 +112,7 @@ int busca_arvore(RRN rrn, CHAVE chave, RRN *rrn_encontrado, int *posicao_encontr
             return busca_arvore(pagina.filhos[i], chave, rrn_encontrado, posicao_encontrada);
         }
     }
-    return FALSE;
+    return busca_arvore(pagina.filhos[pagina.lotacao], chave, rrn_encontrado, posicao_encontrada);
 }
 
 int insere_pagina(PAGINA *pagina, RRN rrn, CHAVE chave) {
@@ -194,12 +194,16 @@ void divide_pagina(CHAVE chavePromocaoAtual, RRN rrnPromocaoAtual, PAGINA *pagin
 
     for (i = 0; comparaChaves(pagina_auxiliar.chaves[i], *chavePromocao) < 0; i++) {
         paginaAtual->chaves[i] = pagina_auxiliar.chaves[i];
+        paginaAtual->filhos[i] = pagina_auxiliar.filhos[i];
     }
+    paginaAtual->filhos[i] = pagina_auxiliar.filhos[i];
     paginaAtual->lotacao = i++;
 
     for (j = 0; i < pagina_auxiliar.lotacao; j++, i++) {
         novaPagina->chaves[j] = pagina_auxiliar.chaves[i];
+        novaPagina->filhos[j] = pagina_auxiliar.filhos[i];
     }
+    novaPagina->filhos[j] = pagina_auxiliar.filhos[i];
     novaPagina->lotacao = j;
 }
 

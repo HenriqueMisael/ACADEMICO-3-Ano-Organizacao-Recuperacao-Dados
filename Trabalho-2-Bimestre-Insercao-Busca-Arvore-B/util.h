@@ -12,6 +12,7 @@ int readInt();
 
 char *readString(int tamanho);
 
+int pede_arquivo(FILE **arquivo);
 
 void println(const char *text);
 

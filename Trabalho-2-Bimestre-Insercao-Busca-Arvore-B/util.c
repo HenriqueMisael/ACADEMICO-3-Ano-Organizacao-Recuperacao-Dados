@@ -27,3 +27,14 @@ char *readString(int tamanho) {
 void println(const char *text) {
     printf("%s\n", text);
 }
+
+int pede_arquivo(FILE ** arquivo) {
+    println("Digite um nome de arquivo (ate 40 caracteres) para validar importacao:");
+    *arquivo = fopen(readString(40), "r");
+
+    if (*arquivo == NULL) {
+        println("Arquivo nao encontrado.");
+        return FALSE;
+    }
+    return TRUE;
+}
